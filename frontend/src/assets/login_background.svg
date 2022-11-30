@@ -1,0 +1,42 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" width="3000" height="2000">
+	<title>2763613-ai</title>
+	<defs>
+		<linearGradient id="g1" x1="514.2" y1="-612.6" x2="1878.4" y2="228.6" gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#7655a3"/>
+			<stop offset="1" stop-color="#2d2e79"/>
+		</linearGradient>
+	</defs>
+	<style>
+		.s0 { fill: url(#g1) } 
+		.s1 { fill: none;stroke: #000000;stroke-width: 2 } 
+	</style>
+	<g id="BACKGROUND">
+		<path id="&lt;Path&gt;" class="s0" d="m1500 1000h-1500v-1000h1500z"/>
+		<g id="&lt;Clip Group&gt;">
+			<g id="&lt;Group&gt;" style="opacity: .3;mix-blend-mode: overlay">
+				<path id="&lt;Path&gt;" class="s1" d="m1558.4 307.1c-61.4 93.2-341 420.6-924.8 120.5-583.8-300.1-926-77.3-926-77.3"/>
+				<path id="&lt;Path&gt;" class="s1" d="m-102.5 686c0 0 553.1-148.4 996.6-8.6 443.5 139.8 730.5 51 808 3.1"/>
+				<path id="&lt;Path&gt;" class="s1" d="m-514-4.9c72.7 54.9 353.6 185.1 804.8 72.3 492.4-123.1 983.2 98 991.3 101.7q0.1 0.1 0.2 0.1c5.1 2.4 248.4 116.9 457.6 62.9"/>
+				<path id="&lt;Path&gt;" class="s1" d="m1887.1 913.1c0 0-409.6-174.6-1212.7 9.1-530.8 121.5-757.3-161.5-757.3-161.5"/>
+			</g>
+		</g>
+	</g>
+	<g id="OBJECTS">
+		<g id="&lt;Group&gt;">
+			<g id="&lt;Group&gt;">
+				<g id="&lt;Group&gt;">
+				</g>
+			</g>
+		</g>
+	</g>
+	<g id="DESIGNED BY FREEPIK">
+		<g id="&lt;Group&gt;">
+			<g id="&lt;Group&gt;">
+				<g id="&lt;Group&gt;">
+				</g>
+			</g>
+			<g id="&lt;Group&gt;">
+			</g>
+		</g>
+	</g>
+</svg>

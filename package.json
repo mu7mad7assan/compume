@@ -1,0 +1,20 @@
+{
+  "name": "compu-me",
+  "version": "1.0.0",
+  "description": "mern stack web application",
+  "main": "server.js",
+  "scripts": {
+    "build": "cd backend && npm install && npx tsc && cd ../frontend && npm install && npm run build",
+    "start": "node backend/dist/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mu7mad7assan/compu-me.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mu7mad7assan/compu-me/issues"
+  },
+  "homepage": "https://github.com/mu7mad7assan/compu-me#readme"
+}
