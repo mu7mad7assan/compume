@@ -3,9 +3,7 @@ import React from 'react';
 import { GiComputerFan } from 'react-icons/gi';
 import { Link, useNavigate } from 'react-router-dom';
 import loginPhoto from '../assets/login_photo.svg';
-import dotenv from 'dotenv';
 
-dotenv.config();
 axios.defaults.withCredentials = true;
 const Register = () => {
   const navigate = useNavigate();
@@ -19,7 +17,7 @@ const Register = () => {
       password: e.target.password.value
     };
     try {
-      await axios.post(`http://localhost:${process.env.PORT}/api/auth/register`, user, {
+      await axios.post('http://localhost:10000/api/auth/register', user, {
         withCredentials: true
       });
       navigate('/login');

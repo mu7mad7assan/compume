@@ -47,7 +47,7 @@ const Order = () => {
     try {
       dispatch({ type: 'FETCH_REQUEST' });
       const { data: order } = await axios.get(
-        `http://localhost:${process.env.PORT}/api/orders/order/${orderId}`,
+        `http://localhost:10000/api/orders/order/${orderId}`,
         {
           headers: { authorization: `Bearer ${userInfo.token}` }
         },

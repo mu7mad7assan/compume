@@ -5,9 +5,7 @@ import NavBar from '../components/NavBar';
 import ProductDetailsCard from '../components/ProductDetailsCard';
 import SectionTitle from '../components/SectionTitle';
 import { Store } from '../Context/Store';
-import dotenv from 'dotenv';
 
-dotenv.config();
 axios.defaults.withCredentials = true;
 
 const reducer = (state, action) => {
@@ -41,7 +39,7 @@ const Product = () => {
       const existItem = cartItems.find((item) => item._id === product._id);
       const quantity = existItem ? existItem.quantity + 1 : 1;
       const data = await axios.get(
-        `http://localhost:${process.env.PORT}/api/products/product/${productItem._id}`,
+        `http://localhost:10000/api/products/product/${productItem._id}`,
         {
           withCredentials: true
         }
@@ -60,12 +58,9 @@ const Product = () => {
     const fetchProduct = async () => {
       try {
         dispatch({ type: 'FETCH_REQUEST' });
-        const product = await axios.get(
-          `http://localhost:${process.env.PORT}/products/product/${id}`,
-          {
-            withCredentials: true
-          }
-        );
+        const product = await axios.get(`http://localhost:10000/products/product/${id}`, {
+          withCredentials: true
+        });
         dispatch({ type: 'FETCH_SUCCESS', payload: product.data });
       } catch (error) {
         dispatch({ type: 'FETCH_FAIL', payload: error });

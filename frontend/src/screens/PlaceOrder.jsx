@@ -5,9 +5,7 @@ import NavBar from '../components/NavBar';
 import SectionTitle from '../components/SectionTitle';
 import StageCard from '../components/StageCard';
 import { Store } from '../Context/Store';
-import dotenv from 'dotenv';
 
-dotenv.config();
 const PlaceOrder = () => {
   const navigate = useNavigate();
   const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -24,7 +22,7 @@ const PlaceOrder = () => {
   const placeOrderHandler = async () => {
     try {
       const { data } = await axios.post(
-        `http://localhost:${process.env.PORT}/api/orders/placeorder`,
+        'http://localhost:10000/api/orders/placeorder',
         {
           orderItems: cartItems,
           shippingAddress: shippingAddress,

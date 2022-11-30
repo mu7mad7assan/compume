@@ -2,9 +2,6 @@ import React, { useContext, useState } from 'react';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import axios from 'axios';
 import { Store } from '../Context/Store';
-import dotenv from 'dotenv';
-
-dotenv.config();
 
 axios.defaults.withCredentials = true;
 const CARD_OPTIONS = {
@@ -44,7 +41,7 @@ const StripePaymentForm = (props) => {
       try {
         const { id } = paymentMethod;
         const response = await axios.post(
-          `http://localhost:${process.env.PORT}/api/orders/payment`,
+          'http://localhost:10000/api/orders/payment',
           {
             amount: Math.ceil(props.orderTotalPrice),
             id
@@ -55,7 +52,7 @@ const StripePaymentForm = (props) => {
           console.log('Successful Payment');
           setSuccess(true);
           await axios.put(
-            `http://localhost:${process.env.PORT}/api/orders/order/${props.orderId}/pay`,
+            `http://localhost:10000/api/orders/order/${props.orderId}/pay`,
             response.data.paymentResult,
             {
               headers: {

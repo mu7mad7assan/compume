@@ -6,9 +6,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { Store } from '../Context/Store.jsx';
 import { Transition } from '@headlessui/react';
-import dotenv from 'dotenv';
 
-dotenv.config();
 axios.defaults.withCredentials = true;
 
 const NavBar = () => {
@@ -21,7 +19,7 @@ const NavBar = () => {
   const navigate = useNavigate();
   const signOutHandler = async () => {
     try {
-      await axios.get(`http://localhost:${process.env.PORT}/api/auth/logout`, {
+      await axios.get('http://localhost:10000/api/auth/logout', {
         withCredentials: true
       });
       ctxDispatch({ type: 'USER_SIGNOUT' });
