@@ -5,7 +5,9 @@ import CartItemCard from '../components/CartItemCard';
 import NavBar from '../components/NavBar';
 import SectionTitle from '../components/SectionTitle';
 import { Store } from '../Context/Store';
+import dotenv from 'dotenv';
 
+dotenv.config();
 axios.defaults.withCredentials = true;
 
 const Profile = () => {
@@ -21,7 +23,7 @@ const Profile = () => {
     e.preventDefault();
     try {
       await axios.put(
-        `/api/users/${userId}`,
+        `http://localhost:${process.env.PORT}/api/users/${userId}`,
         {
           email: email,
           userName: userName,

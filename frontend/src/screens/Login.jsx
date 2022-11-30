@@ -4,7 +4,9 @@ import loginPhoto from '../assets/login_photo.svg';
 import { GiComputerFan } from 'react-icons/gi';
 import axios from 'axios';
 import { Store } from '../Context/Store';
+import dotenv from 'dotenv';
 
+dotenv.config();
 axios.defaults.withCredentials = true;
 
 const Login = () => {
@@ -20,9 +22,13 @@ const Login = () => {
         email,
         password
       };
-      const res = await axios.post('/api/auth/login', userLogin, {
-        withCredentials: true
-      });
+      const res = await axios.post(
+        `http://localhost:${process.env.PORT}/api/auth/login`,
+        userLogin,
+        {
+          withCredentials: true
+        }
+      );
       const {
         data: {
           data: {

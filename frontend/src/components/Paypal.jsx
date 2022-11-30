@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from 'react';
+import dotenv from 'dotenv';
 
+dotenv.config();
 const Paypal = (props) => {
   const paypal = useRef();
 
@@ -7,17 +9,23 @@ const Paypal = (props) => {
     window.paypal
       .Buttons({
         createOrder: (data, actions) => {
-          return fetch(`/api/orders/order/${props.orderId}/pay`, {
-            method: 'POST'
-          })
+          return fetch(
+            `http://localhost:${process.env.PORT}/api/orders/order/${props.orderId}/pay`,
+            {
+              method: 'POST'
+            }
+          )
             .then((response) => response.json())
             .then((order) => order.id)
             .catch((error) => console.log(error));
         },
         onApprove: (data, actions) => {
-          return fetch(`/api/orders/order/${props.orderId}/capture`, {
-            method: 'POST'
-          })
+          return fetch(
+            `http://localhost:${process.env.PORT}/api/orders/order/${props.orderId}/capture`,
+            {
+              method: 'POST'
+            }
+          )
             .then((response) => Response.json())
             .then((orderData) => {
               console.log('capture Results', orderData, JSON.stringify(orderData, null, 2));

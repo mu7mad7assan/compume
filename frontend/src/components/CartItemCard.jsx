@@ -1,7 +1,9 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useReducer } from 'react';
 import { Store } from '../Context/Store';
+import dotenv from 'dotenv';
 
+dotenv.config();
 const reducer = (state, action) => {
   switch (action.type) {
     case 'FETCH_REQUEST':
@@ -28,7 +30,7 @@ const CartItemCard = () => {
       try {
         dispatch({ type: 'FETCH_REQUEST' });
         const orders = await axios.get(
-          `/api/orders/mine/${userInfo._id}`,
+          `http://localhost:${process.env.PORT}/api/orders/mine/${userInfo._id}`,
           {
             headers: {
               authorization: `Bearer ${userInfo.token}`
