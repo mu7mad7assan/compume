@@ -55,7 +55,7 @@ const Product = () => {
     const fetchProduct = async () => {
       try {
         dispatch({ type: 'FETCH_REQUEST' });
-        const product = await axios.get(`http://localhost:10000/products/product/${id}`, {
+        const product = await axios.get(`/products/product/${id}`, {
           withCredentials: true
         });
         dispatch({ type: 'FETCH_SUCCESS', payload: product.data });
