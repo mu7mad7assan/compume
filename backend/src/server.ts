@@ -29,13 +29,13 @@ async function db() {
   console.log('connected to db')
 }
 
+app.get('/baseurl', (req: Request, res: Response) => {
+  res.json({BASE_URL: `http://localhost:${port}`});
+})
 
 app.use(express.static(path.join(__dirname, '../../frontend/build')));
 app.get('*', (req: Request, res: Response) => {
   res.sendFile(path.join(__dirname, '../../frontend/build/index.html'));
-})
-app.get('/', (req: Request, res: Response) => {
-    res.send('hello');
 })
 
 app.listen(port, () => {

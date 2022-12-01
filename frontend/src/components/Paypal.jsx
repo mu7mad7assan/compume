@@ -7,7 +7,7 @@ const Paypal = (props) => {
     window.paypal
       .Buttons({
         createOrder: (data, actions) => {
-          return fetch(`http://localhost:10000/api/orders/order/${props.orderId}/pay`, {
+          return fetch(`/api/orders/order/${props.orderId}/pay`, {
             method: 'POST'
           })
             .then((response) => response.json())
@@ -15,7 +15,7 @@ const Paypal = (props) => {
             .catch((error) => console.log(error));
         },
         onApprove: (data, actions) => {
-          return fetch(`http://localhost:10000/api/orders/order/${props.orderId}/capture`, {
+          return fetch(`/api/orders/order/${props.orderId}/capture`, {
             method: 'POST'
           })
             .then((response) => Response.json())

@@ -5,9 +5,7 @@ import NavBar from '../components/NavBar';
 import SectionTitle from '../components/SectionTitle';
 import StageCard from '../components/StageCard';
 import { Store } from '../Context/Store';
-import dotenv from 'dotenv';
 
-dotenv.config();
 const reducer = (state, action) => {
   switch (action.type) {
     case 'FETCH_REQUEST':
@@ -47,7 +45,7 @@ const Order = () => {
     try {
       dispatch({ type: 'FETCH_REQUEST' });
       const { data: order } = await axios.get(
-        `http://localhost:10000/api/orders/order/${orderId}`,
+        `/api/orders/order/${orderId}`,
         {
           headers: { authorization: `Bearer ${userInfo.token}` }
         },

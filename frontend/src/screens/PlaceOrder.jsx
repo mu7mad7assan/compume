@@ -22,7 +22,7 @@ const PlaceOrder = () => {
   const placeOrderHandler = async () => {
     try {
       const { data } = await axios.post(
-        'http://localhost:10000/api/orders/placeorder',
+        '/api/orders/placeorder',
         {
           orderItems: cartItems,
           shippingAddress: shippingAddress,

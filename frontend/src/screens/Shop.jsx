@@ -31,10 +31,10 @@ const Products = () => {
   const fetchProducts = async () => {
     try {
       dispatch({ type: 'FETCH_REQUEST' });
-      await axios.get('http://localhost:10000/api/products/seed', {
+      await axios.get('/api/products/seed', {
         withCredentials: true
       });
-      const response = await axios.get('http://localhost:10000/api/products/show', {
+      const response = await axios.get('/api/products/show', {
         withCredentials: true
       });
       const products = await response.data;

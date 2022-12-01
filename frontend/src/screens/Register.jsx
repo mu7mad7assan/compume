@@ -17,7 +17,7 @@ const Register = () => {
       password: e.target.password.value
     };
     try {
-      await axios.post('http://localhost:10000/api/auth/register', user, {
+      await axios.post('/api/auth/register', user, {
         withCredentials: true
       });
       navigate('/login');

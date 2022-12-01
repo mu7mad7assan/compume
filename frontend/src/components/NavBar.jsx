@@ -19,7 +19,7 @@ const NavBar = () => {
   const navigate = useNavigate();
   const signOutHandler = async () => {
     try {
-      await axios.get('http://localhost:10000/api/auth/logout', {
+      await axios.get('/api/auth/logout', {
         withCredentials: true
       });
       ctxDispatch({ type: 'USER_SIGNOUT' });

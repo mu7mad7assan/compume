@@ -41,7 +41,7 @@ const StripePaymentForm = (props) => {
       try {
         const { id } = paymentMethod;
         const response = await axios.post(
-          'http://localhost:10000/api/orders/payment',
+          '/api/orders/payment',
           {
             amount: Math.ceil(props.orderTotalPrice),
             id
@@ -52,7 +52,7 @@ const StripePaymentForm = (props) => {
           console.log('Successful Payment');
           setSuccess(true);
           await axios.put(
-            `http://localhost:10000/api/orders/order/${props.orderId}/pay`,
+            `/api/orders/order/${props.orderId}/pay`,
             response.data.paymentResult,
             {
               headers: {

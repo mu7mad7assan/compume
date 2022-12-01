@@ -6,7 +6,6 @@ import axios from 'axios';
 import { Store } from '../Context/Store';
 
 axios.defaults.withCredentials = true;
-
 const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
@@ -20,7 +19,7 @@ const Login = () => {
         email,
         password
       };
-      const res = await axios.post('http://localhost:10000/api/auth/login', userLogin, {
+      const res = await axios.post(`/api/auth/login`, userLogin, {
         withCredentials: true
       });
       const {
@@ -60,7 +59,6 @@ const Login = () => {
       console.log(error);
     }
   };
-
   return (
     <>
       <div className="sticky bg-main-light border-solid border-b-2 border-b-slate-100">

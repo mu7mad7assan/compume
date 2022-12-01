@@ -4,7 +4,7 @@
   "description": "mern stack web application",
   "main": "server.js",
   "scripts": {
-    "build": "cd backend && npm install && npx tsc && cd ../frontend && npm install && npm run build",
+    "build": "cd backend && npm install && npx tsc && cd ../frontend && npm install --legacy-peer-deps && npm run build",
     "start": "node backend/dist/server.js"
   },
   "repository": {

@@ -28,7 +28,7 @@ const CartItemCard = () => {
       try {
         dispatch({ type: 'FETCH_REQUEST' });
         const orders = await axios.get(
-          `http://localhost:10000/api/orders/mine/${userInfo._id}`,
+          `/api/orders/mine/${userInfo._id}`,
           {
             headers: {
               authorization: `Bearer ${userInfo.token}`

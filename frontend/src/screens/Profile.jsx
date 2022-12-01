@@ -21,7 +21,7 @@ const Profile = () => {
     e.preventDefault();
     try {
       await axios.put(
-        `http://localhost:10000/api/users/${userId}`,
+        `/api/users/${userId}`,
         {
           email: email,
           userName: userName,
