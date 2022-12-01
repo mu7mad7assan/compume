@@ -8,7 +8,7 @@ export default () => {
 
   const verifyAuth = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/api/auth/isloggedin', {
+      const response = await axios.get('/api/auth/isloggedin', {
         withCredentials: true
       });
       return response.data;
