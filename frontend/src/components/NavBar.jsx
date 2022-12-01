@@ -48,7 +48,7 @@ const NavBar = () => {
                 </div>
                 <div className="hidden sm:block">
                   <div className="ml-10 flex justify-around items-center">
-                    <a href="#" className="text-gray-300 px-3 py-2 rounded-md text-sm font-medium">
+                    <a className="text-gray-300 px-3 py-2 rounded-md text-sm font-medium">
                       {cartItems ? (
                         <button
                           type="button"
@@ -156,7 +156,7 @@ const NavBar = () => {
                   </a>
 
                   <a
-                    href="#"
+                    href={`/profile/${userInfo._id}`}
                     className="text-white px-3 py-2 rounded-md text-sm font-medium flex flex-row items-center">
                     <CgProfile size={30} className="mr-3" />
                     {userInfo.userName}
